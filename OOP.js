@@ -1,5 +1,3 @@
-//let cFactor;
-
 class cFactor {
   constructor(
     cFactorLabel,
@@ -21,6 +19,23 @@ class cFactor {
     this.denomExp = denomExp;
     this.denomUnit = denomUnit;
     this.denomComp = denomComp;
+    this.getNum = function () {
+      return `${this.num} E ${this.numExp} ${this.numUnit} ${this.NumComp}`;
+    };
+    this.getDenom = function () {
+      return `${this.denom} E ${this.denomExp} ${this.denomUnit} ${this.denomComp}`;
+    };
+    this.reverse = function () {
+      this.denom = num;
+      this.denomExp = numExp;
+      this.denomUnit = numUnit;
+      this.denomComp = numComp;
+      this.num = denom;
+      this.numExp = denomExp;
+      this.numUnit = denomUnit;
+      this.numComp = denomComp;
+      return `num = ${this.num} and denom = ${this.denom}`;
+    };
   }
 }
 
@@ -43,12 +58,11 @@ atomsPerMol = new cFactor(
   "atoms",
   undefined,
   1,
+  undefined,
   "mol",
   undefined
 );
 
-let numeratorProduct =
-  atomsPerMol.num *
-  Math.pow(10, atomsPerMol.numExp) *
-  (gramsNitrogenPerMol.num * Math.pow(10, gramsNitrogenPerMol.numExp));
-console.log(parseInt(numeratorProduct));
+console.log(atomsPerMol.getNum());
+console.log(atomsPerMol.getDenom());
+console.log(atomsPerMol.reverse());
