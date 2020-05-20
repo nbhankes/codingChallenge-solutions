@@ -1,0 +1,17 @@
+function vowelsAndConsonants(s) {
+    let letters = s.split("");
+    const vowels = [];
+    const consonants = [];
+ 
+    for (var i = 0; i < letters.length; i++) {
+        if (letters[i] === "a" || letters[i] === "e" || letters[i] === "i" || letters[i] === "o" || letters[i] === "u") {
+                    vowels.push(letters[i]);
+                } else {
+                    consonants.push(letters[i]);
+                 }
+    }
+
+    console.log(vowels, consonants);
+}
+
+vowelsAndConsonants("This is a string!")
