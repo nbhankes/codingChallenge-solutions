@@ -2,6 +2,8 @@ function vowelsAndConsonants(s) {
     let letters = s.split("");
     const vowels = [];
     const consonants = [];
+    const orderedLetters = [];
+    
  
     for (var i = 0; i < letters.length; i++) {
         if (letters[i] === "a" || letters[i] === "e" || letters[i] === "i" || letters[i] === "o" || letters[i] === "u") {
@@ -11,7 +13,9 @@ function vowelsAndConsonants(s) {
                  }
     }
 
-    console.log(vowels, consonants);
-}
+    orderedLetters.push(...vowels, ...consonants);
 
-vowelsAndConsonants("This is a string!")
+    for (let i = 0; i < orderedLetters.length; i++) {
+        console.log(orderedLetters[i]);
+}
+}
