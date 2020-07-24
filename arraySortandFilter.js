@@ -25,20 +25,25 @@ The minimal number of statues that need to be added to existing statues such tha
 
 function makeArrayConsecutive2(statues) {
     let lastArrIndex = statues.length - 1;
-    let statuesInOrder = statues.sort();
-    let maxNumInArr = statues[lastArrIndex];
+    let statuesInOrder = statues.sort((a, b) => a - b);
+    console.log(statuesInOrder)
+    let maxNumInArr = statuesInOrder[lastArrIndex];
+        console.log("Max Number in array is: " + maxNumInArr)
     let minNumInArr = statuesInOrder[0]
-    console.log(minNumInArr)
+    console.log("Min Number in array is: " + minNumInArr)
     let newArr = [];
     let missingStatues = []
-    
+ 
     for (var i = minNumInArr; i < maxNumInArr + 1; i++) {
         newArr.push(i)
-            }
+            }           
+        console.log("Array of missing statues:" + missingStatues)
+        console.log("Array of newArr:" + newArr)
+ 
+        newArr = newArr.filter(val => !statues.includes(val))
+        console.log(newArr)
             
-    
-          newArr = newArr.filter(val => !statues.includes(val))  
-            
-            
+
     return newArr.length
 }
+
