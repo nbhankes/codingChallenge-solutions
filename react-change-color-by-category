@@ -1,0 +1,7 @@
+//This code will change the background color based on the category name. If the JSON object category = 'Chores,' the background color will be green. Else, green.
+
+				<Badge
+					variantColor={props.category === 'Chores' ? 'green' : 'red'}
+					h='100%'>
+					{props.category}
+				</Badge>
