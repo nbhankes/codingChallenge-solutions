@@ -5,3 +5,5 @@
 					h='100%'>
 					{props.category}
 				</Badge>
+				
+variant-color comes from the Chakra UI library
